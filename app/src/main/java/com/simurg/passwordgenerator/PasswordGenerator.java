@@ -10,12 +10,12 @@ import java.util.Random;
  * Created by uyegen on 08.03.2017.
  */
 
-class PasswordGenerator {
+public class PasswordGenerator {
     private String charStr = "";
     private int len;
 
-    PasswordGenerator(boolean sy, boolean nu, boolean lo, boolean up, boolean si, boolean am,
-                      int len) {
+    public PasswordGenerator(boolean sy, boolean nu, boolean lo, boolean up, boolean si, boolean am,
+                             int len) {
         String symbols = "é,;.:-_*?=})](/{&%+$#'!<>\\\"";
         String numbers = "1234567890";
         String lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
@@ -43,7 +43,7 @@ class PasswordGenerator {
         this.len = len;
     }
 
-    String generate() {
+    public String generate() {
         String t = "";
         Random r = new Random();
         List<String> charList = new ArrayList<>(Arrays.asList(charStr.split("")));

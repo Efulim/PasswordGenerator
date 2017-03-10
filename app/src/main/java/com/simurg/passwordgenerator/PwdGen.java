@@ -1,5 +1,8 @@
 package com.simurg.passwordgenerator;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -59,14 +62,19 @@ public class PwdGen extends AppCompatActivity {
         }
     }
 
-// Copy To Clipboard
-//    if (!tvGeneratedPassword.getText().toString().isEmpty()) {
-//        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-//        ClipData clip = ClipData.newPlainText(getResources().getString(R.string.PASSWORD), tvGeneratedPassword.getText());
-//        clipboard.setPrimaryClip(clip);
-//    } else {
-//        Toast.makeText(getApplicationContext(), getResources().getString((R.string.YOU_HAVE_TO_GENERATE_PWD)), Toast.LENGTH_SHORT).show();
-//    }
+    public void copyPassword(View view) {
+        String password = tvGeneratedPassword.getText().toString();
+        password = password.replace(getResources().getString(R.string.GENERATED_PASSWORD), "");
+
+        if (!password.isEmpty()) {
+            ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clipData = ClipData.newPlainText(getResources().getString(R.string.PASSWORD), password);
+            clipboardManager.setPrimaryClip(clipData);
+        } else {
+            Toast.makeText(getApplicationContext(), getResources().getString((R.string.YOU_HAVE_TO_GENERATE_PWD)), Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     private ArrayAdapter<String> getSpinnerList() {
         List<String> arrPassLength = new ArrayList<>();

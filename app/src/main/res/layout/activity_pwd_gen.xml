@@ -13,8 +13,8 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <TableRow
             android:layout_width="match_parent"
@@ -22,138 +22,139 @@
             android:gravity="center_horizontal">
 
             <TextView
-                android:text="@string/TITLE"
+                android:id="@+id/tv0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv0"
+                android:text="@string/TITLE"
+                android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18sp"
-                android:textAlignment="viewStart" />
+                android:textSize="18sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
+
             <TextView
+                android:id="@+id/tv1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv1"
                 android:layout_weight="1"
                 android:text="@string/PASSWORD_LENGTH" />
 
             <Spinner
+                android:id="@+id/spPassLength"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/spPassLength" />
+                android:layout_height="wrap_content" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
-                android:text="@string/INCLUDE_SYMBOLS"
+                android:id="@+id/tv2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv2"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="@string/INCLUDE_SYMBOLS" />
 
             <CheckBox
-                android:text="@string/C1"
+                android:id="@+id/cbSymbols"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cbSymbols" />
+                android:text="@string/C1" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
-                android:text="@string/INCLUDE_NUMBERS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/tv3"
-                android:layout_weight="1" />
-
-            <CheckBox
-                android:text="@string/C2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cbNumbers" />
+                android:layout_weight="1"
+                android:text="@string/INCLUDE_NUMBERS" />
+
+            <CheckBox
+                android:id="@+id/cbNumbers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/C2" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <TextView
-                android:text="@string/INCLUDE_LOWER_ALPH"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/tv4"
-                android:layout_weight="1" />
-
-            <CheckBox
-                android:text="@string/C3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cbLowerChars" />
+                android:layout_weight="1"
+                android:text="@string/INCLUDE_LOWER_ALPH" />
+
+            <CheckBox
+                android:id="@+id/cbLowerChars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/C3" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
-                android:text="@string/INCLUDE_UPPER_ALPH"
+                android:id="@+id/tv5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv5"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="@string/INCLUDE_UPPER_ALPH" />
 
             <CheckBox
+                android:id="@+id/cbUpperChars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cbUpperChars"
                 android:text="@string/C4" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
-                android:text="@string/EXCLUDE_SIMILAR_CHARS"
+                android:id="@+id/tv6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv6"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:text="@string/EXCLUDE_SIMILAR_CHARS" />
 
             <CheckBox
-                android:text="@string/C5"
+                android:id="@+id/cbExcludedSimilar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cbExcludedSimilar" />
+                android:text="@string/C5" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
-                android:text="@string/EXCLUDE_AMBIGUOUS_CHARS"
+                android:id="@+id/tv7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv7"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:text="@string/EXCLUDE_AMBIGUOUS_CHARS" />
 
             <CheckBox
-                android:text="@string/C6"
+                android:id="@+id/cbExcludedAmbiguous"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cbExcludedAmbiguous" />
+                android:text="@string/C6" />
         </TableRow>
 
         <TableRow
@@ -162,24 +163,25 @@
             android:gravity="center_horizontal">
 
             <Button
-                android:text="@string/GENERATE_PASSWORD"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/btnGenerate"
                 style="@style/Widget.AppCompat.Button"
-                android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:onClick="generatePassword"
+                android:text="@string/GENERATE_PASSWORD"
+                android:textAllCaps="false" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
-                android:text="@string/GENERATED_PASSWORD"
+                android:id="@+id/tvGeneratedPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvGeneratedPassword" />
+                android:text="@string/GENERATED_PASSWORD" />
         </TableRow>
 
     </TableLayout>

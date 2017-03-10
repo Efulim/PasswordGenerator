@@ -39,28 +39,29 @@ public class PwdGen extends AppCompatActivity {
         cbExcludedAmbiguous = (CheckBox) findViewById(R.id.cbExcludedAmbiguous);
         tvGeneratedPassword = (TextView) findViewById(R.id.tvGeneratedPassword);
         btnGenerate = (Button) findViewById(R.id.btnGenerate);
-        btnGenerate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!spPassLength.getSelectedItem().toString().equals("") &&
-                        !cbSymbols.isChecked() &&
-                        !cbNumbers.isChecked() &&
-                        !cbLowerChars.isChecked() &&
-                        !cbUpperChars.isChecked()) {
-                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.CHECKBOX), Toast.LENGTH_SHORT).show();
-                } else {
-                    // boolean sy, boolean nu, boolean lo, boolean up, boolean si, boolean am
-                    PasswordGenerator pg = new PasswordGenerator(cbSymbols.isChecked(),
-                            cbNumbers.isChecked(), cbLowerChars.isChecked(),
-                            cbUpperChars.isChecked(), cbExcludedSimilar.isChecked(),
-                            cbExcludedAmbiguous.isChecked(),
-                            Integer.valueOf(spPassLength.getSelectedItem().toString()));
-                    String generatedPassword = getResources().getString(R.string.GENERATED_PASSWORD) + pg.generate();
-                    tvGeneratedPassword.setText(generatedPassword);
-                }
-            }
-        });
     }
+
+    public void generatePassword(View view) {
+
+        if (!spPassLength.getSelectedItem().toString().equals("") &&
+                !cbSymbols.isChecked() &&
+                !cbNumbers.isChecked() &&
+                !cbLowerChars.isChecked() &&
+                !cbUpperChars.isChecked()) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.CHECKBOX), Toast.LENGTH_SHORT).show();
+        } else {
+            // boolean sy, boolean nu, boolean lo, boolean up, boolean si, boolean am
+            PasswordGenerator pg = new PasswordGenerator(cbSymbols.isChecked(),
+                    cbNumbers.isChecked(), cbLowerChars.isChecked(),
+                    cbUpperChars.isChecked(), cbExcludedSimilar.isChecked(),
+                    cbExcludedAmbiguous.isChecked(),
+                    Integer.valueOf(spPassLength.getSelectedItem().toString()));
+            String generatedPassword = getResources().getString(R.string.GENERATED_PASSWORD) + pg.generate();
+            tvGeneratedPassword.setText(generatedPassword);
+        }
+
+    }
+
 
     private ArrayAdapter<String> getSpinnerList() {
         List<String> arrPassLength = new ArrayList<>();

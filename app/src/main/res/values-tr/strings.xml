@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Password Generator</string>
+    <string name="CHECKBOX">Bunlardan birini seçmelisiniz: Semboller, Sayılar, Alt veya Üst Mektuplar.</string>
+    <string name="EXCLUDE_AMBIGUOUS_CHARS">Belirsiz Karakteri Hariç Tut</string>
+</resources>

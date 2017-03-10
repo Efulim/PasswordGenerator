@@ -2,17 +2,17 @@
 <resources>
     <string name="PASSWORD_LENGTH">Password Length</string>
     <string name="INCLUDE_SYMBOLS">Include Symbols</string>
-    <string name="C1">(e.g. \@#$%)</string>
+    <string name="C1" translatable="false">(e.g. \@#$%)</string>
     <string name="INCLUDE_NUMBERS">Include Numbers</string>
-    <string name="C2">0123456789</string>
+    <string name="C2" translatable="false">0123456789</string>
     <string name="INCLUDE_LOWER_ALPH">Include Lowercase Characters</string>
-    <string name="C3">(e.g. abc)</string>
+    <string name="C3" translatable="false">(e.g. abc)</string>
     <string name="INCLUDE_UPPER_ALPH">Include Upper Characters</string>
-    <string name="C4">(e.g. ABC)</string>
+    <string name="C4" translatable="false">(e.g. ABC)</string>
     <string name="EXCLUDE_SIMILAR_CHARS">Exclude Similar Chars</string>
-    <string name="C5">(e.g. i, l, 1, L, o, 0, O)</string>
+    <string name="C5" translatable="false">(e.g. i, l, 1, L, o, 0, O)</string>
     <string name="EXCLUDE_AMBIGUOUS_CHARS">Exclude Ambiguous Chars</string>
-    <string name="C6"><![CDATA[({ } [ ] ( ) / \\ \' \" ` ~ , ; : . < >)]]></string>
+    <string name="C6" translatable="false"><![CDATA[({ } [ ] ( ) / \\ \' \" ` ~ , ; : . < >)]]></string>
     <string name="TITLE">You can create Password</string>
     <string name="GENERATE_PASSWORD">Generate Password</string>
     <string name="GENERATED_PASSWORD">Your Password is..:</string>

@@ -181,8 +181,25 @@
                 android:id="@+id/tvGeneratedPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/GENERATED_PASSWORD" />
-        </TableRow>
+                android:text="@string/GENERATED_PASSWORD"/>
+            </TableRow>
+
+        <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <Button
+
+            android:id="@+id/btnCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:onClick="copyPassword"
+            android:text="@string/COPY_PASSWORD"
+            style="@style/Widget.AppCompat.Button"
+            android:textAllCaps="false" />
+    </TableRow>
 
     </TableLayout>
 

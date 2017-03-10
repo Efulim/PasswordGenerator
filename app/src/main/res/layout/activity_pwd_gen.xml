@@ -164,12 +164,12 @@
 
             <Button
                 android:id="@+id/btnGenerate"
-                style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
                 android:onClick="generatePassword"
                 android:text="@string/GENERATE_PASSWORD"
+                style="@style/Widget.AppCompat.Button"
                 android:textAllCaps="false" />
         </TableRow>
 

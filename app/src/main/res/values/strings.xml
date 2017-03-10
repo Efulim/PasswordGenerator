@@ -16,6 +16,8 @@
     <string name="TITLE">You can create Password</string>
     <string name="GENERATE_PASSWORD">Generate Password</string>
     <string name="GENERATED_PASSWORD">Your Password is..:</string>
+    <string name="PASSWORD">Password</string>
 
     <string name="CHECKBOX">You must choose one of those. \n Symbols, Numbers, Lower or Upper Letters.</string>
+    <string name="YOU_HAVE_TO_GENERATE_PWD">You have to generate Password.</string>
 </resources>

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,7 +21,6 @@ public class PwdGen extends AppCompatActivity {
     CheckBox cbExcludedSimilar;
     CheckBox cbExcludedAmbiguous;
     TextView tvGeneratedPassword;
-    Button btnGenerate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +36,11 @@ public class PwdGen extends AppCompatActivity {
         cbExcludedSimilar = (CheckBox) findViewById(R.id.cbExcludedSimilar);
         cbExcludedAmbiguous = (CheckBox) findViewById(R.id.cbExcludedAmbiguous);
         tvGeneratedPassword = (TextView) findViewById(R.id.tvGeneratedPassword);
-        btnGenerate = (Button) findViewById(R.id.btnGenerate);
+
+        setDefaults();
     }
 
     public void generatePassword(View view) {
-
         if (!spPassLength.getSelectedItem().toString().equals("") &&
                 !cbSymbols.isChecked() &&
                 !cbNumbers.isChecked() &&
@@ -50,7 +48,7 @@ public class PwdGen extends AppCompatActivity {
                 !cbUpperChars.isChecked()) {
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.CHECKBOX), Toast.LENGTH_SHORT).show();
         } else {
-            // boolean sy, boolean nu, boolean lo, boolean up, boolean si, boolean am
+            // boolean sy, boolean nu, boolean lo, boolean up, boolean si, boolean am, int len
             PasswordGenerator pg = new PasswordGenerator(cbSymbols.isChecked(),
                     cbNumbers.isChecked(), cbLowerChars.isChecked(),
                     cbUpperChars.isChecked(), cbExcludedSimilar.isChecked(),
@@ -59,18 +57,34 @@ public class PwdGen extends AppCompatActivity {
             String generatedPassword = getResources().getString(R.string.GENERATED_PASSWORD) + pg.generate();
             tvGeneratedPassword.setText(generatedPassword);
         }
-
     }
 
+// Copy To Clipboard
+//    if (!tvGeneratedPassword.getText().toString().isEmpty()) {
+//        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+//        ClipData clip = ClipData.newPlainText(getResources().getString(R.string.PASSWORD), tvGeneratedPassword.getText());
+//        clipboard.setPrimaryClip(clip);
+//    } else {
+//        Toast.makeText(getApplicationContext(), getResources().getString((R.string.YOU_HAVE_TO_GENERATE_PWD)), Toast.LENGTH_SHORT).show();
+//    }
 
     private ArrayAdapter<String> getSpinnerList() {
         List<String> arrPassLength = new ArrayList<>();
         for (int i = 4; i < 26; i++) {
             arrPassLength.add(String.valueOf(i));
         }
-        ArrayAdapter<String> arrAdapterPL = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> arrAdapterPL = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, arrPassLength);
         arrAdapterPL.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return arrAdapterPL;
+    }
+
+    private void setDefaults() {
+        spPassLength.setSelection(4, true); // 4, 5, 6, 7, 8, 9, 10
+        cbSymbols.setChecked(true);
+        cbNumbers.setChecked(true);
+        cbLowerChars.setChecked(true);
+        cbUpperChars.setChecked(true);
+        cbExcludedSimilar.setChecked(true);
     }
 }

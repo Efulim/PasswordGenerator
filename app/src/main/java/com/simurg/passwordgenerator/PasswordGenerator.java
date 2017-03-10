@@ -11,11 +11,12 @@ import java.util.Random;
  */
 
 public class PasswordGenerator {
-    private String charStr = "";
+    private List<String> charList;
     private int len;
 
     public PasswordGenerator(boolean sy, boolean nu, boolean lo, boolean up, boolean si, boolean am,
                              int len) {
+        this.charList = new ArrayList<>();
         String symbols = "é,;.:-_*?=})](/{&%+$#'!<>\\\"";
         String numbers = "1234567890";
         String lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
@@ -23,22 +24,22 @@ public class PasswordGenerator {
         String similarCharacters = "il1Lo0O";
         String ambiguousCharacters = "{}[]()/\\'\"`~,;:.<>";
         if (sy) {
-            charStr += symbols;
+            this.charList.addAll(Arrays.asList(symbols.split("")));
         }
         if (nu) {
-            charStr += numbers;
+            this.charList.addAll(Arrays.asList(numbers.split("")));
         }
         if (lo) {
-            charStr += lowerCharacters;
+            this.charList.addAll(Arrays.asList(lowerCharacters.split("")));
         }
         if (up) {
-            charStr += upperCharacters;
+            this.charList.addAll(Arrays.asList(upperCharacters.split("")));
         }
         if (si) {
-            charStr += similarCharacters;
+            this.charList.removeAll(Arrays.asList(similarCharacters.split("")));
         }
         if (am) {
-            charStr += ambiguousCharacters;
+            this.charList.removeAll(Arrays.asList(ambiguousCharacters.split("")));
         }
         this.len = len;
     }
@@ -46,10 +47,9 @@ public class PasswordGenerator {
     public String generate() {
         String t = "";
         Random r = new Random();
-        List<String> charList = new ArrayList<>(Arrays.asList(charStr.split("")));
-        Collections.shuffle(charList);
+        Collections.shuffle(this.charList);
         while (t.length() < this.len) {
-            t += charList.get(r.nextInt(charList.size()));
+            t += this.charList.get(r.nextInt(this.charList.size()));
         }
         return t;
     }

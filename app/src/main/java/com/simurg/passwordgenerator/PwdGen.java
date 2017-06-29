@@ -59,15 +59,6 @@ public class PwdGen extends AppCompatActivity {
         }
     }
 
-// Copy To Clipboard
-//    if (!tvGeneratedPassword.getText().toString().isEmpty()) {
-//        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-//        ClipData clip = ClipData.newPlainText(getResources().getString(R.string.PASSWORD), tvGeneratedPassword.getText());
-//        clipboard.setPrimaryClip(clip);
-//    } else {
-//        Toast.makeText(getApplicationContext(), getResources().getString((R.string.YOU_HAVE_TO_GENERATE_PWD)), Toast.LENGTH_SHORT).show();
-//    }
-
     private ArrayAdapter<String> getSpinnerList() {
         List<String> arrPassLength = new ArrayList<>();
         for (int i = 4; i < 26; i++) {
